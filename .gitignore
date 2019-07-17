@@ -412,5 +412,12 @@ flycheck_*.el
 # network security
 /network-security.data
 
+### Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 
 # End of https://www.gitignore.io/api/emacs,csharp,dotnetcore
