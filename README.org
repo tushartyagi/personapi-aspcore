@@ -36,28 +36,28 @@ retrieving objects of that type:
 
   1. Clone the repository.
   2. Change to the directory where the project is clone.
-  3. Run `dotnet restore` to restore packages
-  4. Change to the project directory using `cd PersonSaver`
-  5. Run `dotnet ef database update` to create database and apply migrations.
-  6. `dotnet run` to run the project.
+  3. Run =dotnet restore= to restore packages
+  4. Change to the project directory using =cd PersonSaver=
+  5. Run =dotnet ef database update= to create database and apply migrations.
+  6. =dotnet run= to run the project.
   7. The logging is available on the console.
-  8. The project is hosted on `https://localhost:5001/api/persons`
+  8. The project is hosted on https://localhost:5001/api/persons
 
   It supports the usual =GET=, =POST= and =PUT= operations to fetch, create and
   update the resources.
 
-  - GET `https://localhost:5001/api/persons` to get all the persons.
+  - GET https://localhost:5001/api/persons to get all the persons.
 
     [[./images/README.org_20190718_115213_sN2fQl.png]]
 
-  - POST `https://localhost:5001/api/persons` with the json body containing just
+  - POST https://localhost:5001/api/persons with the json body containing just
     the name as a string to create resource for that name. The response contains
     the ID of the newly created resource.
     
     [[./images/README.org_20190718_115245_v0DK9S.png]]
 
 
-  - PUT `https://localhost:5001/api/persons/(guid)` with the json body containing
+  - PUT https://localhost:5001/api/persons/(guid) with the json body containing
     both id & name to update the resource on the server. 
 
     [[./images/README.org_20190718_115311_Cu3zm8.png]]
