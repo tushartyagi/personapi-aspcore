@@ -29,7 +29,7 @@ namespace PersonSaver.Controllers
         }
 
         // GET api/persons/5
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetPerson")]
         public ActionResult<string> Get(string id)
         {
             return Ok(_personsRepository.Get(id));
@@ -37,15 +37,16 @@ namespace PersonSaver.Controllers
 
         // POST api/persons
         [HttpPost]
-        public ActionResult Post([FromBody] string name)
+        public IActionResult Post([FromBody] string name)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             try {
-                var newPerson = new Person { Id = Guid.NewGuid().ToString(), Name = name };
+                var id = Guid.NewGuid().ToString();
+                var newPerson = new Person { Id = id, Name = name };
                 _personsRepository.Add(newPerson);
-                return Created(newPerson.Id.ToString(), newPerson);
+                return CreatedAtRoute("GetPerson", new { Id = id }, newPerson);
             }
             // This can be a better handler
             catch (Exception ex) {
@@ -56,16 +57,20 @@ namespace PersonSaver.Controllers
 
         // PUT api/persons/5
         [HttpPut("{id}")]
-        public void Put(string id, [FromBody] Person person)
+        public IActionResult Put(string id, [FromBody] Person person)
         {
-            
-        }
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
-        // DELETE api/persons/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            
+            try {
+                _personsRepository.Update(person);
+                return Ok();
+            }
+            // This can be a better handler
+            catch (Exception ex) {
+                _logger.LogError(ex, "Unable to create request: Person", null);
+                return StatusCode(500);
+            }
         }
     }
 }

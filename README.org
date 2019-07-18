@@ -14,13 +14,13 @@ Create a new .net framework or dotnet core HTTP API that allows saving and
 retrieving objects of that type: 
 
 - [X] API should accepts and return JSON payloads
-- [ ] Saving a person with an ID that already exists, overwrites existing data
-- [ ] Can retrieve a person by Id
-- [ ] Provide proper error responses
+- [X] Saving a person with an ID that already exists, overwrites existing data
+- [X] Can retrieve a person by Id
+- [X] Provide proper error responses
 - [X] Provide logging to console
-- [ ] Can use storage of your choice (in-memory, mongo, sql, etc.), if not using
+- [X] Can use storage of your choice (in-memory, mongo, sql, etc.), if not using
   in memory then provide instructions for settings up the storage.
-- [ ] Can use any frameworks libraries you deem necessary
+- [X] Can use any frameworks libraries you deem necessary
 - [ ] Please commit your code to a GitHub repository provide the link to the repository.
 
 * Information

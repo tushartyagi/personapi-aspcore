@@ -6,16 +6,15 @@ using PersonSaver.Models;
 
 namespace PersonSaver.Repositories
 {
+    // TODO: Add Delete operation.
     public class PersonsRepository: IPersonsRepository
     {
-
         PersonsContext _context;
         
         public PersonsRepository(PersonsContext context) {
             _context = context;
         }
         
-        // TODO: Add Delete operations.
         public IEnumerable<Person> Get() {
             return _context.Persons.ToList();
         }
@@ -30,7 +29,11 @@ namespace PersonSaver.Repositories
         }
 
         public void Update(Person person) {
-            throw new NotImplementedException();
+            var existingPerson = _context.Persons.FirstOrDefault(x => x.Id == person.Id);
+            if (existingPerson != null) {
+                existingPerson.Name = person.Name;
+                _context.SaveChanges();
+            }
         }
     }
 }
