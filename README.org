@@ -13,11 +13,20 @@ Given definition of a Person:
 Create a new .net framework or dotnet core HTTP API that allows saving and
 retrieving objects of that type: 
 
-1. API should accepts and return JSON payloads
-2. Saving a person with an ID that already exists, overwrites existing data
-3. Can retrieve a person by Id Provide proper error responses
-4. Provide logging to console
-5. Can use storage of your choice (in-memory, mongo, sql, etc.), if not using in
-   memory then provide instructions for settings up the storage.
-6. Can use any frameworks libraries you deem necessary
-7. Please commit your code to a GitHub repository provide the link to the repository.
+- [X] API should accepts and return JSON payloads
+- [ ] Saving a person with an ID that already exists, overwrites existing data
+- [ ] Can retrieve a person by Id
+- [ ] Provide proper error responses
+- [X] Provide logging to console
+- [ ] Can use storage of your choice (in-memory, mongo, sql, etc.), if not using
+  in memory then provide instructions for settings up the storage.
+- [ ] Can use any frameworks libraries you deem necessary
+- [ ] Please commit your code to a GitHub repository provide the link to the repository.
+
+* Information
+
+  - Logging to console provided by =NLog=.
+  - In-Memory database provided by SQLite.
+  - Uses EntityFrameworkCore (EFCore) for the ORM layer.
+
+
