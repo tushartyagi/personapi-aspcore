@@ -21,12 +21,12 @@ retrieving objects of that type:
 - [X] Can use storage of your choice (in-memory, mongo, sql, etc.), if not using
   in memory then provide instructions for settings up the storage.
 - [X] Can use any frameworks libraries you deem necessary
-- [ ] Please commit your code to a GitHub repository provide the link to the repository.
+- [X] Please commit your code to a GitHub repository provide the link to the repository.
 
 * Information
 
   - Logging to console provided by =NLog=.
-  - Database provided by ==SQLite=.
+  - Database provided by =SQLite=.
   - Uses =EntityFrameworkCore= (EFCore) for the ORM and migrations..
 
 * Usage
@@ -63,5 +63,9 @@ retrieving objects of that type:
     [[./images/README.org_20190718_115311_Cu3zm8.png]]
 
 
+* TODOs
+
+  - DELETE operation for the controllers.
+  - Tests
   
 
